@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import DetailPage from './pages/DetailPage/DetailPage.jsx';
+import RandomPage from './pages/RandomPage/RandomPage.jsx';
+import HomePage from './pages/homepage/HomePage.jsx'
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/:MealID' element={<DetailPage />} />
+        <Route path='/Random' element={<RandomPage />} />
+
+      </Routes>
+
+
+    </>
+
   );
 }
 
