@@ -30,7 +30,7 @@ function HomePage() {
         })
     }, [searchInput])
 
-    console.log(foodData)
+
 
 
 
