@@ -16,7 +16,7 @@ const DetailPage = () => {
 
 
     async function GetFoodRecipe() {
-        const response = await axios.get(`https:www.themealdb.com/api/json/v1/1/lookup.php?i=${MealID}`)
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${MealID}`)
         setFoodDetail(response.data.meals[0])
         setVideoID(response.data.meals[0].strYoutube.split("=")[1])
     }
