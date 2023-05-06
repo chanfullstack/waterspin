@@ -15,9 +15,7 @@ function SavedMenuPage() {
     console.log(localData)
 
 
-    useEffect(() => {
-        localStorage.setItem("localData", localData)
-    }, [localData])
+
 
     return (
         <div className='App container mx-auto'>

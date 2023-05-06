@@ -1,6 +1,5 @@
 {
   "name": "foodrecipe",
-  "homepage": "https://chanfullstack.github.io/foodrecipe",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
