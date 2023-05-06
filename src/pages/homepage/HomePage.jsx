@@ -17,9 +17,18 @@ function HomePage() {
 
 
 
+    // const GetFoodAPIFirst = async () => {
+    //     const API = axios.create({ baseURL: "https:www.themealdb.com/" })
+    //     const response = await API.get(`api/json/v1/1/search.php?s=${searchInput}`)
+    //     return response
+    // }
+
     const GetFoodAPIFirst = async () => {
-        const API = axios.create({ baseURL: "https:www.themealdb.com/" })
-        const response = await API.get(`api/json/v1/1/search.php?s=${searchInput}`)
+        const response = await axios({
+            method: 'get',
+            url: `https:www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`,
+        })
+
         return response
     }
 
