@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
 const FoodCard = ({ food }) => {
+
 
     let navigate = useNavigate()
 
@@ -25,6 +26,7 @@ const FoodCard = ({ food }) => {
                     {ShowTag}
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Recipe</span>
                 </div>
+
             </div>
         )
 

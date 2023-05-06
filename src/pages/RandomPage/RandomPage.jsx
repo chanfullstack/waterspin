@@ -23,7 +23,7 @@ const RandomPage = () => {
         GetFoodRecipe()
     }, [])
 
-    console.log(foodDetail)
+
 
 
     return (

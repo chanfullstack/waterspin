@@ -18,8 +18,8 @@ function HomePage() {
 
 
     const GetFoodAPIFirst = async () => {
-
-        const response = await axios.get(`https:www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
+        const API = axios.create({ baseURL: "https:www.themealdb.com/" })
+        const response = await API.get(`api/json/v1/1/search.php?s=${searchInput}`)
         return response
     }
 
