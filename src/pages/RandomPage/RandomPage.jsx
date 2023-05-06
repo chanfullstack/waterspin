@@ -14,7 +14,7 @@ const RandomPage = () => {
 
 
     async function GetFoodRecipe() {
-        const response = await axios.get(`https:www.themealdb.com/api/json/v1/1/random.php`)
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
         setFoodDetail(response.data.meals[0])
         setVideoID(response.data.meals[0].strYoutube.split("=")[1])
     }
