@@ -15,14 +15,14 @@ function App() {
   const [localData, setLocalData] = useState(() => {
     const localDataCheck = localStorage.getItem("localData")
     if (localDataCheck) {
-      return localDataCheck
+      return JSON.parse(localDataCheck)
     } else {
       return []
     }
   })
 
   useEffect(() => {
-    localStorage.setItem("localData", localData)
+    localStorage.setItem("localData", JSON.stringify(localData))
   }, [localData])
 
 

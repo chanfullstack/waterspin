@@ -1,9 +1,9 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import CoverFood from './CoverFood'
 import Ingredients from './Ingredients'
-
+import { SaveToLocalContext } from '../../App'
 
 
 const DetailPage = () => {
@@ -25,7 +25,40 @@ const DetailPage = () => {
         GetFoodRecipe()
     }, [])
 
-    console.log(foodDetail)
+
+    useEffect(() => {
+        const checkSaved = localData.filter((food) =>
+            food.idMeal == foodDetail.idMeal)
+        console.log(checkSaved)
+
+        if (checkSaved.length > 0) {
+            setSaveUnsave(false)
+        } else {
+            setSaveUnsave(true)
+        }
+    })
+
+
+    const { localData, setLocalData } = useContext(SaveToLocalContext)
+
+    function addToLocal() {
+        setLocalData([...localData, { ...foodDetail, id: localData.length + 1, note: "Note here" }])
+        setSaveUnsave(false)
+    }
+
+    function delteLocal(foodDetail) {
+        const deletedResult = localData.filter((food) => {
+            return foodDetail.idMeal != food.idMeal
+        }
+        )
+        setLocalData(deletedResult)
+        setSaveUnsave(true)
+    }
+
+
+    const [saveUnsave, setSaveUnsave] = useState()
+
+
 
 
     return (
@@ -47,7 +80,23 @@ const DetailPage = () => {
 
 
 
+            {saveUnsave
+                ? <button onClick={addToLocal} type="button" className="text-white  bg-green-700
+             hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 
+             font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600
+              dark:hover:bg-green-700 dark:focus:ring-green-800">Save this menu</button>
+                : <button type="button" onClick={() => delteLocal(foodDetail)} className="text-white
+             bg-red-700 hover:bg-red-800 focus:outline-none 
+             focus:ring-4 focus:ring-red-300 font-medium rounded-full 
+             text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600
+              dark:hover:bg-red-700 dark:focus:ring-red-900">Unsave this menu</button>
+            }
+
+
+
             <div className='mx-auto md:grid  md:mt-10 md:grid-cols-12 pl-5 pr-5 max-w-7xl '>
+
+
 
                 <div className='col-span-4'><Ingredients foodDetail={foodDetail} /></div>
 

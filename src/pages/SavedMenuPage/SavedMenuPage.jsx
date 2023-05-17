@@ -3,7 +3,6 @@ import Header from './Header'
 import FoodList from './FoodList'
 import { useContext } from 'react'
 import { SaveToLocalContext } from '../../App'
-import { useEffect } from 'react'
 
 
 
@@ -15,6 +14,11 @@ function SavedMenuPage() {
     console.log(localData)
 
 
+
+    const showSavedMenu = localData.map((food, index) => {
+        return <FoodList key={index}
+            food={food} />
+    })
 
 
     return (
@@ -37,8 +41,9 @@ function SavedMenuPage() {
 
             SavedMenuPage
 
+            {showSavedMenu}
 
-            <FoodList />
+
         </div>
     )
 }
