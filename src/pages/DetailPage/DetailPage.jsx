@@ -26,9 +26,14 @@ const DetailPage = () => {
     }, [])
 
 
+
+
+    const { localData, setLocalData } = useContext(SaveToLocalContext)
+
+    // CHECKKKKKKKKKKKKKKKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
     useEffect(() => {
         const checkSaved = localData.filter((food) =>
-            food.idMeal == foodDetail.idMeal)
+            food.idMeal === foodDetail.idMeal)
         console.log(checkSaved)
 
         if (checkSaved.length > 0) {
@@ -36,10 +41,9 @@ const DetailPage = () => {
         } else {
             setSaveUnsave(true)
         }
-    })
+    }, [])
+    // CHECKKKKKKKKKKKKKKKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 
-
-    const { localData, setLocalData } = useContext(SaveToLocalContext)
 
     function addToLocal() {
         setLocalData([...localData, { ...foodDetail, id: localData.length + 1, note: "Note here" }])
@@ -48,7 +52,7 @@ const DetailPage = () => {
 
     function delteLocal(foodDetail) {
         const deletedResult = localData.filter((food) => {
-            return foodDetail.idMeal != food.idMeal
+            return foodDetail.idMeal !== food.idMeal
         }
         )
         setLocalData(deletedResult)
