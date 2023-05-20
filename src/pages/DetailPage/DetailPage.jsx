@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import CoverFood from './CoverFood'
 import Ingredients from './Ingredients'
 import { SaveToLocalContext } from '../../App'
+import Navbar from './Navbar'
 
 
 const DetailPage = () => {
@@ -31,22 +32,22 @@ const DetailPage = () => {
     const { localData, setLocalData } = useContext(SaveToLocalContext)
 
     // CHECKKKKKKKKKKKKKKKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-    useEffect(() => {
-        const checkSaved = localData.filter((food) =>
-            food.idMeal === foodDetail.idMeal)
-        console.log(checkSaved)
+    // useEffect(() => {
+    //     const checkSaved = localData.filter((food) =>
+    //         food.idMeal === foodDetail.idMeal)
+    //     console.log(checkSaved)
 
-        if (checkSaved.length > 0) {
-            setSaveUnsave(false)
-        } else {
-            setSaveUnsave(true)
-        }
-    }, [])
+    //     if (checkSaved.length > 0) {
+    //         setSaveUnsave(false)
+    //     } else {
+    //         setSaveUnsave(true)
+    //     }
+    // }, [])
     // CHECKKKKKKKKKKKKKKKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 
 
     function addToLocal() {
-        setLocalData([...localData, { ...foodDetail, id: localData.length + 1, note: "Note here" }])
+        setLocalData([...localData, { ...foodDetail, id: localData.length + 1, note: "" }])
         setSaveUnsave(false)
     }
 
@@ -66,42 +67,26 @@ const DetailPage = () => {
 
 
     return (
-        <div className='mx-auto' >
-            <div onClick={() => { navigate(`/`) }}
-                className="text-xl font-bold  dark:text-neutral-200
-                 relative flex w-full flex-wrap items-center justify-between
-                  bg-neutral-100 py-2 text-neutral-500 shadow-lg
-                   hover:text-neutral-700 focus:text-neutral-700
-                    dark:bg-neutral-600 lg:py-4 hover:cursor-pointer">
-                <div className="flex w-full flex-wrap items-center justify-center px-3">
-                    <div >
-                        Back
-                    </div>
-                </div>
-            </div>
-
+        <div className='mx-auto bg-[#EFEFEF] pb-20 flex flex-col ' >
+            <Navbar />
             <CoverFood foodDetail={foodDetail} />
-
 
 
             {saveUnsave
                 ? <button onClick={addToLocal} type="button" className="text-white  bg-green-700
-             hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 
+             hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 w-2/4 sm:max-w-[200px] self-center
              font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600
               dark:hover:bg-green-700 dark:focus:ring-green-800">Save this menu</button>
                 : <button type="button" onClick={() => delteLocal(foodDetail)} className="text-white
              bg-red-700 hover:bg-red-800 focus:outline-none 
              focus:ring-4 focus:ring-red-300 font-medium rounded-full 
-             text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600
+             text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 w-2/4  sm:max-w-[200px] self-center
               dark:hover:bg-red-700 dark:focus:ring-red-900">Unsave this menu</button>
             }
 
 
 
             <div className='mx-auto md:grid  md:mt-10 md:grid-cols-12 pl-5 pr-5 max-w-7xl '>
-
-
-
                 <div className='col-span-4'><Ingredients foodDetail={foodDetail} /></div>
 
 

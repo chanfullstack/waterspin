@@ -2,26 +2,22 @@ import React, { useEffect, useState } from 'react'
 
 import FoodCard from './FoodCard'
 import SearchFood from './SearchFood'
-import Header from './Header'
 import axios from 'axios'
 import NotFound from './NotFound'
-import RandomPage from '../RandomPage/RandomPage'
+import Navbar from './Navbar'
+import Hero from './Hero'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 
 
 
 
-function HomePage() {
+
+
+function MenuPage() {
     const [foodData, setFoodData] = useState([])
     const [searchInput, setSearchInput] = useState("")
 
-
-
-    // const GetFoodAPIFirst = async () => {
-    //     const API = axios.create({ baseURL: "https:www.themealdb.com/" })
-    //     const response = await API.get(`api/json/v1/1/search.php?s=${searchInput}`)
-    //     return response
-    // }
 
     const GetFoodAPIFirst = async () => {
         const response = await axios({
@@ -49,7 +45,7 @@ function HomePage() {
                 food={food}
             />
         })
-        return (<div className='grid gap-6 lg:grid-cols-4 mt-10 md:grid-cols-2 justify-items-center'>
+        return (<div className='grid gap-10 lg:grid-cols-4 md:grid-cols-2 lg:mx-10 mx-5 pb-20 justify-items-center'>
             {ShowFoodResult}
         </div>
         )
@@ -59,25 +55,31 @@ function HomePage() {
 
 
     return (
-        <div className="App container mx-auto">
+        <ParallaxProvider>
 
 
-            <div className='homePage'>
+            <Navbar />
+            <Hero inputVal={searchInput}
+                onValueChange={setSearchInput} />
 
-                <Header />
-                <SearchFood
-                    inputVal={searchInput}
-                    onValueChange={setSearchInput} />
+            <div className='bg-[#212122]'>
+
+                <h3 className='text-7xl font-semibold text-center mb-10 text-[#a3b666]'>
+                    ENJOY KRUB
+                </h3>
 
                 {
                     foodData ? ShowFood() : <NotFound setSearchInput={setSearchInput} />
                 }
 
-
-
             </div>
-        </div>
+
+
+
+
+
+        </ParallaxProvider >
     )
 }
 
-export default HomePage
+export default MenuPage

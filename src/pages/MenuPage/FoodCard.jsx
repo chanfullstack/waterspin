@@ -14,11 +14,11 @@ const FoodCard = ({ food }) => {
         })
 
         return (
-            <div className="max-w-sm rounded overflow-hidden shadow-lg hover:cursor-pointer transform translate-y-4 hover:translate-y-0 duration-500 ease-in-out " onClick={() => { navigate(`/${food.idMeal}`) }} >
+            <div className="max-w-sm bg-[#353630] rounded-2xl overflow-hidden shadow-lg hover:cursor-pointer transform translate-y-4 hover:translate-y-0 duration-500 ease-in-out " onClick={() => { navigate(`/${food.idMeal}`) }} >
                 <img className="w-full" src={food.strMealThumb} alt="Food" />
-                <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">{food.strMeal}</div>
-                    <p className="text-gray-700 text-base">
+                <div className="px-6 py-4 ">
+                    <div className="font-bold text-xl lg:text-2xl mb-2 text-[#a3b666]">{food.strMeal}</div>
+                    <p className="text-white lg:text-xl ">
                         The {food.strArea} food that made from {food.strIngredient1} , {food.strIngredient2} , {food.strIngredient3} , . . .
                     </p>
                 </div>
@@ -32,11 +32,11 @@ const FoodCard = ({ food }) => {
 
     }
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg hover:cursor-pointer transform translate-y-4 hover:translate-y-0 duration-500 ease-in-out" onClick={() => { navigate(`/${food.idMeal}`) }}>
+        <div className="max-w-sm bg-[#353630] rounded-2xl overflow-hidden shadow-lg hover:cursor-pointer transform translate-y-4 hover:translate-y-0 duration-500 ease-in-out" onClick={() => { navigate(`/${food.idMeal}`) }}>
             <img className="w-full" src={food.strMealThumb} alt="Food" />
             <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{food.strMeal}</div>
-                <p className="text-gray-700 text-base">
+                <div className="font-bold text-xl lg:text-2xl mb-2 text-[#a3b666]">{food.strMeal}</div>
+                <p className="text-white lg:text-xl">
                     The {food.strArea} food that made from {food.strIngredient1} , {food.strIngredient2} , {food.strIngredient3} , . . .
                 </p>
             </div>

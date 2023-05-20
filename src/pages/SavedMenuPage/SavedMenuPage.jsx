@@ -1,8 +1,10 @@
 import React from 'react'
-import Header from './Header'
 import FoodList from './FoodList'
 import { useContext } from 'react'
 import { SaveToLocalContext } from '../../App'
+import Navbar from './Navbar'
+import Hero from './Hero'
+
 
 
 
@@ -22,27 +24,37 @@ function SavedMenuPage() {
 
 
     return (
-        <div className='App container mx-auto'>
+        <div className='App mx-auto bg-[#EFEFEF]'>
 
-            <Header />
-            <h1 className="text-3xl font-bold underline text-center mb-5">
-                Your Menu
-            </h1>
+            <Navbar />
+            <Hero />
 
-            <button onClick={(e) => {
+            <div className='flex flex-col justify-center items-center'>
+                <h1 className=" text-7xl text-[#a3b666] font-bold text-center mb-5 mt-[50px] md:mt-[50px] xl:mt-[-50px] 2xl:mt-[-120px]">
+                    Your saved menu
+                </h1>
 
-                setLocalData([...localData, "1"])
-            }}>ADD 1</button>
-            <br />
 
-            <button onClick={(e) => {
-                setLocalData([])
-            }}>clear</button>
+                {showSavedMenu.length > 0
+                    ?
 
-            SavedMenuPage
+                    <div className='flex flex-col'>
+                        <div className='flex flex-col justify-center mt-10'>
 
-            {showSavedMenu}
+                            {showSavedMenu}
 
+                        </div >
+                        <button class="bg-red-500 hover:bg-red-700 my-4 text-white font-bold max-w-[200px] self-center py-2 px-4 rounded-full" onClick={(e) => { setLocalData([]) }}>
+                            Clear all
+                        </button>
+                    </div>
+                    :
+                    <div className='h-[100px]'>
+                        <h1 className='mt-5 text-gray-500 text-2xl'>No saved menu yet</h1>
+                    </div>
+                }
+
+            </div>
 
         </div>
     )

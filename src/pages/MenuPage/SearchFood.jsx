@@ -2,7 +2,7 @@ import React from 'react'
 
 function SearchFood({ inputVal, onValueChange }) {
     return (
-        <div className='SearchSection  mt-5 h-5 max-sm:ml-5 max-sm:mr-5'>
+        <div className='SearchSection  mt-5 h-5 max-sm:ml-5 max-sm:mr-5 '>
 
 
             <label className="relative block">
