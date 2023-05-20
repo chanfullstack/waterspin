@@ -9,7 +9,7 @@ import Navbar from './Navbar'
 
 const DetailPage = () => {
     const { MealID } = useParams()
-    let navigate = useNavigate()
+
 
 
     const [foodDetail, setFoodDetail] = useState([])
@@ -31,19 +31,18 @@ const DetailPage = () => {
 
     const { localData, setLocalData } = useContext(SaveToLocalContext)
 
-    // CHECKKKKKKKKKKKKKKKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-    // useEffect(() => {
-    //     const checkSaved = localData.filter((food) =>
-    //         food.idMeal === foodDetail.idMeal)
-    //     console.log(checkSaved)
 
-    //     if (checkSaved.length > 0) {
-    //         setSaveUnsave(false)
-    //     } else {
-    //         setSaveUnsave(true)
-    //     }
-    // }, [])
-    // CHECKKKKKKKKKKKKKKKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+    useEffect(() => {
+        const checkSaved = localData.filter((food) =>
+            food.idMeal === MealID)
+        console.log(checkSaved)
+        if (checkSaved.length > 0) {
+            setSaveUnsave(false)
+        } else {
+            setSaveUnsave(true)
+        }
+    }, [localData])
+
 
 
     function addToLocal() {
