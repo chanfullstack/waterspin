@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { RandomMenuAPI } from '../../utils/API'
 
 const RandomCard = () => {
 
@@ -8,16 +9,15 @@ const RandomCard = () => {
 
 
     const [foodData, setFoodData] = useState([])
+
     async function GetFoodRecipe() {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
+        const response = await axios.get(RandomMenuAPI)
         setFoodData(response.data.meals[0])
     }
 
     useEffect(() => {
         GetFoodRecipe()
     }, [])
-
-    console.log(foodData)
 
     return (
         <div className='bg-[#353630] shadow-2xl rounded-[10px] hover:cursor-pointer transform translate-y-4 hover:translate-y-0 duration-500 ease-in-out h-full' onClick={() => { navigate(`/${foodData.idMeal}`) }}>

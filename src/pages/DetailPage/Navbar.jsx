@@ -38,6 +38,7 @@ function Navbar() {
                     </li>
                     <li className='cursor-pointer hover:opacity-[0.7] p-0'>
                         <Link smooth={true}
+                            to='#'
                             onClick={() => { navigate(`/MenuPage`) }}
                             offset={0} duration={500}>
                             MENU

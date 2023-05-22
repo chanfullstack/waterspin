@@ -25,30 +25,30 @@ function Navbar() {
             items-center justify-end mr-[20px]'>
                 <h1 className='font-bold text-[20px] lg:text-[27px]
                 mr-[60px] md:mr-0 '>
-                    RECIEP
+                    RECIPE
                 </h1>
                 <ul className='hidden md:flex gap-[20px]
                 text-[20px] lg:text-[27px]'>
                     <li className='cursor-pointer hover:opacity-[0.7] p-0'>
-                        <Link to='home' smooth={true}
+                        <Link to='home' smooth={true.toString()}
                             duration={500}>
                             HOME
                         </Link>
                     </li>
                     <li className='cursor-pointer hover:opacity-[0.7] p-0'>
-                        <Link to='#' smooth={true}
+                        <Link to='#' smooth={true.toString()}
                             onClick={() => { navigate(`/MenuPage`) }}
                             offset={0} duration={500}>
                             MENU
                         </Link>
                     </li>
                     <li className='cursor-pointer hover:opacity-[0.7] p-0'>
-                        <button onClick={() => { navigate(`/SavedMenu`) }} smooth={true} offset={0} duration={500}>
+                        <button onClick={() => { navigate(`/SavedMenu`) }} smooth={true.toString()} offset={0} duration={500}>
                             SAVED
                         </button>
                     </li>
                     <li className='cursor-pointer hover:opacity-[0.7] p-0'>
-                        <Link to='footer' smooth={true}
+                        <Link to='footer' smooth={true.toString()}
                             offset={-100} duration={500}>
                             CONTACT
                         </Link>
@@ -77,28 +77,28 @@ function Navbar() {
 
                     <Link className='w-full cursor-pointer hover:opacity-[0.7]'
                         onClick={handleClose}
-                        to='home' smooth={true}
+                        to='home' smooth={true.toString()}
                         duration={500}>
                         HOME
                     </Link>
 
                     <Link className='w-full cursor-pointer hover:opacity-[0.7]'
                         onClick={() => { navigate(`/MenuPage`) }}
-                        to='#' smooth={true}
+                        to='#' smooth={true.toString()}
                         offset={0} duration={500}>
                         MENU
                     </Link>
 
                     <Link className='w-full cursor-pointer hover:opacity-[0.7]'
                         onClick={() => { navigate(`/SavedMenu`) }}
-                        to='#' smooth={true}
+                        to='#' smooth={true.toString()}
                         offset={0} duration={500}>
                         SAVED
                     </Link>
 
                     <Link className='w-full cursor-pointer hover:opacity-[0.7]'
                         onClick={handleClose}
-                        to='footer' smooth={true}
+                        to='footer' smooth={true.toString()}
                         offset={-100} duration={500}>
                         CONTACT
                     </Link>

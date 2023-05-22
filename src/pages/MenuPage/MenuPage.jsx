@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import FoodCard from './FoodCard'
-import SearchFood from './SearchFood'
 import axios from 'axios'
 import NotFound from './NotFound'
 import Navbar from './Navbar'
@@ -30,7 +29,6 @@ function MenuPage() {
     useEffect(() => {
         GetFoodAPIFirst().then((response) => {
             setFoodData(response.data.meals)
-
         })
     }, [searchInput])
 

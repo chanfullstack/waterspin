@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fade, Zoom } from 'react-awesome-reveal'
 import heroImg from "../../asset/cover.jpg"
-import { Link } from 'react-scroll'
+
 
 
 

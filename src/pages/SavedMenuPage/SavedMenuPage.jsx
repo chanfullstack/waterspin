@@ -44,7 +44,7 @@ function SavedMenuPage() {
                             {showSavedMenu}
 
                         </div >
-                        <button class="bg-red-500 hover:bg-red-700 my-4 text-white font-bold max-w-[200px] self-center py-2 px-4 rounded-full" onClick={(e) => { setLocalData([]) }}>
+                        <button className="bg-red-500 hover:bg-red-700 my-4 text-white font-bold max-w-[200px] self-center py-2 px-4 rounded-full" onClick={(e) => { setLocalData([]) }}>
                             Clear all
                         </button>
                     </div>

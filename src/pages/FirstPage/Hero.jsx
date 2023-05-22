@@ -22,7 +22,7 @@ function Hero() {
             lg:mt-[100px] z-[5]'>
                 <Fade right>
                     <p className='text-4xl 
-                lg:text-6xl'>RECIEPT</p>
+                lg:text-6xl'>RECIPE</p>
                 </Fade>
 
                 <div>
@@ -41,7 +41,7 @@ function Hero() {
                 </div>
 
                 <Zoom bottom delay={1200} duration={900}>
-                    <Link to='menu' smooth={true} className='text-[30px] mt-[100px] lg:text-[35px] w-fit px-[25px] 
+                    <Link to='menu' smooth={true.toString()} className='text-[30px] mt-[100px] lg:text-[35px] w-fit px-[25px] 
                     py-[10px] lg:px-[20px] border-none outline-none bg-[#e3ff8a] 
                 text-[#212122] font-bold hover:bg-[#555b4e] hover:cursor-pointer
                 hover:text-[#e3ff8a] hover:opacity-[0.9] rounded-[5px]'>

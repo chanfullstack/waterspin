@@ -67,8 +67,8 @@ function FoodList({ food }) {
                                     onChange={changeNoteInput}
                                 />
                                 <div className='mt-5'>
-                                    <button class="bg-green-500 hover:bg-green-700 mr-3 text-white font-bold py-2 px-4 rounded-full" type='submit'>Save</button>
-                                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => { setIsEditNote(false) }}>Cancel</button>
+                                    <button className="bg-green-500 hover:bg-green-700 mr-3 text-white font-bold py-2 px-4 rounded-full" type='submit'>Save</button>
+                                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => { setIsEditNote(false) }}>Cancel</button>
                                 </div>
 
                             </form>
@@ -83,10 +83,10 @@ function FoodList({ food }) {
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{food.strMeal}</h5>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 hover:cursor-pointer " onClick={() => openEdit(food)}>Note : {food.note}</p>
                         <div className=''>
-                            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 mr-3 px-4 rounded-full" onClick={() => openEdit(food)}>
+                            <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 mr-3 px-4 rounded-full" onClick={() => openEdit(food)}>
                                 Edit
                             </button>
-                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => deleteThisMenu(food.idMeal)}>
+                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => deleteThisMenu(food.idMeal)}>
                                 Delete
                             </button>
                         </div>
