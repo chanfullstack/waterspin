@@ -5,6 +5,7 @@ import CoverFood from './CoverFood'
 import Ingredients from './Ingredients'
 import { SaveToLocalContext } from '../../App'
 import Navbar from './Navbar'
+import { GetFoodRecipe } from '../../utils/API'
 
 
 const DetailPage = () => {
@@ -16,14 +17,21 @@ const DetailPage = () => {
     const [videoID, setVideoID] = useState("")
 
 
-    async function GetFoodRecipe() {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${MealID}`)
+    // async function GetFoodRecipe() {
+    //     const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${MealID}`)
+    //     setFoodDetail(response.data.meals[0])
+    //     setVideoID(response.data.meals[0].strYoutube.split("=")[1])
+    // }
+
+    async function callData(ID) {
+        console.log("ID", ID)
+        const response = await GetFoodRecipe(ID)
         setFoodDetail(response.data.meals[0])
         setVideoID(response.data.meals[0].strYoutube.split("=")[1])
     }
 
     useEffect(() => {
-        GetFoodRecipe()
+        callData(MealID)
     }, [])
 
 
