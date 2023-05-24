@@ -1,6 +1,5 @@
 import React from 'react'
 import { Fade, Zoom } from 'react-awesome-reveal'
-import heroImg from "../../asset/cover.jpg"
 import { Link } from 'react-scroll'
 
 
@@ -22,7 +21,7 @@ function Hero() {
             lg:mt-[100px] z-[5]'>
                 <Fade right>
                     <p className='text-4xl 
-                lg:text-6xl'>RECIPE</p>
+                lg:text-6xl'>WELCOME</p>
                 </Fade>
 
                 <div>
@@ -30,13 +29,13 @@ function Hero() {
                         <h1 className='text-[40px] 
                     lg:text-6xl font-normal
                     leading-none'>
-                            COOK YOUR FOOD
+                            ENJOY YOUR DRINKS
                         </h1>
                     </Fade>
                     <Fade right delay={1000}>
                         <p className='text-[57px] md:text-5xl lg:text-[85px]
                     font-bold leading-none'>WITH </p><span className='text-[57px] md:text-5xl lg:text-[85px]
-                    font-bold leading-none text-[#E50914]'>MEALDB</span>
+                    font-bold leading-none text-[#E50914]'>WATER SPIN</span>
                     </Fade>
                 </div>
 
@@ -52,7 +51,7 @@ function Hero() {
             <div>
                 <img className='h-screen w-full
                 object-cover absolute top-0 left-0 z-[0]'
-                    src={heroImg} alt="/" />
+                    src="https://assets3.thrillist.com/v1/image/2664768/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70" alt="/" />
             </div>
         </div>
     )

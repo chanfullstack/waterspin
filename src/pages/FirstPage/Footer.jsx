@@ -1,12 +1,12 @@
 import React from 'react'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLine, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
     return (
         <div name='footer' className='w-full'>
             <div className='flex flex-col gap-[20px] w-full py-4
             justify-between text-center bg-[#353630] px-[50px] -mt-[1px]'>
-                <h1 className='text-gray-300 text-[30px]'>Thanks for visiting the website</h1>
+                <h1 className='text-gray-300 text-[30px]'>Thank you for your support</h1>
                 <p className='text-gray-500 max-w-[700px] mx-auto my-[10px]'>
                     One of the very nicest things about life is the way we must regularly stop whatever it is we are doing and devote our attention to eating.
                 </p>
@@ -15,7 +15,7 @@ function Footer() {
                 pt-4 text-2xl text-gray-300 pb-[50px]'>
                     <FaFacebook className='hover:cursor-pointer' />
                     <FaInstagram className='hover:cursor-pointer' />
-                    <FaLinkedin className='hover:cursor-pointer' />
+                    <FaLine className='hover:cursor-pointer' />
                     <FaTwitter className='hover:cursor-pointer' />
                 </div>
             </div>

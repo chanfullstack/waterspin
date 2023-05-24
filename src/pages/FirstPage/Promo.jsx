@@ -1,6 +1,5 @@
 import React from 'react'
 import { Fade, Zoom } from 'react-awesome-reveal'
-import menu from '../../asset/foodNoBG.png'
 
 
 function Promo() {
@@ -15,17 +14,14 @@ function Promo() {
                 justify-center text-center md:text-left'>
                     <div className='flex flex-col gap-[10px]'>
                         <Fade left >
-                            <h1 className='text-[20px] font-semibold
-                            text-[#e3ff8a]'>LET'S COOK!</h1>
+
                             <h1 className='text-[50px] md:text-[60px] 
                         font-semibold text-[#e3ff8a]
                         leading-none'>Enjoy the new taste</h1>
                         </Fade>
                     </div>
                     <Fade delay={1000}>
-                        <p className='text-white'>Cooking is like painting or writing a song. Just as there are
-                            only so many notes or colors, there are only so many
-                            flavors – it’s how you combine them that sets you apart.</p>
+                        <p className='text-white'>Unique taste, can't remember the recipe, Delicious, pleasing, hygiene forgotten.</p>
                     </Fade>
                 </div>
             </div>
@@ -33,7 +29,7 @@ function Promo() {
             mx-auto md:col-start-9 md:col-end-15'>
 
                 <Zoom delay={1000}>
-                    <img className='object-cover drop-shadow-2xl' src={menu} alt="/" />
+                    <img className='object-cover drop-shadow-2xl' src="https://www.transparentpng.com/thumb/cocktail/Wn0aLv-cocktail-free-cut-out.png" alt="/" />
                 </Zoom>
 
             </div>
@@ -43,3 +39,4 @@ function Promo() {
 }
 
 export default Promo
+

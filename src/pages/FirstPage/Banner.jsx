@@ -1,13 +1,12 @@
 import React from 'react'
 import { ParallaxBanner } from 'react-scroll-parallax'
-import banner from '../../asset/banner.jpg'
 
 function Banner() {
     return (
         <ParallaxBanner
             layers={[
                 {
-                    image: banner,
+                    image: "https://cdn.tgdd.vn/2020/07/CookProduct/commercial0040-1200x676.jpg",
                     speed: -20,
                     scale: [1, 1.2],
                     opacity: [0.9, 1]
